@@ -65,6 +65,22 @@
             background-color: #555;
         }
       
+           #playlist-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .playlist-option {
+            margin-bottom: 10px;
+        }
 
         .action-buttons {
             display: flex;
@@ -245,20 +261,38 @@
 
    <div id="song-panel">
         <div id="song-info">
-            <img id="song-image" src="https://images.unsplash.com/photo-1693856758403-bba589db78dc?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTYxMDg4MTd8&ixlib=rb-4.0.3&q=85">
+            <img id="song-image"
+                src="https://images.unsplash.com/photo-1693856758403-bba589db78dc?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTYxMDg4MTd8&ixlib=rb-4.0.3&q=85">
             <div id="song-title">Song Title</div>
         </div>
         <div id="player-controls">
-            <button class="control-button2"><svg viewBox="0 0 256 512" width="10" title="angle-left">
-  <path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
-</svg></button>
-            <button class="control-button2"><svg viewBox="0 0 448 512" width="15" title="pause">
-  <path d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" />
-</svg></button>
-            <button class="control-button2"><svg viewBox="0 0 256 512" width="10" title="angle-right">
-  <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
-</svg></button>
+            <button class="control-button2" id="prevButton">
+                <svg viewBox="0 0 256 512" width="10" title="angle-left">
+                    <path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
+                </svg>
+            </button>
+            <button class="control-button2">
+                <svg viewBox="0 0 448 512" width="15" title="pause">
+                    <path
+                        d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" />
+                </svg>
+            </button>
+            <button class="control-button2" id="nextButton">
+                <svg viewBox="0 0 256 512" width="10" title="angle-right">
+                    <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                </svg>
+            </button>
         </div>
+    </div>
+                  
+   <div id="playlist-modal">
+        <h2>Select Playlist</h2>
+        <div id="playlist-options">
+            <!-- Playlist options -->
+        </div>
+        <button id="cancelButton">Cancel</button>
+    </div>
                   
 </body>
 
