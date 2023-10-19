@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
+  
     <style>
         body {
             font-family: 'Noto Sans', sans-serif;
@@ -141,22 +142,56 @@
             cursor: pointer;
         }
       
+      .pause-button2 {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+      
+      .play-button2 {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+      
       .playlist-image {
             width: 70%; /* Adjust the width as needed */
             height: auto; /* Maintain aspect ratio */
             border-radius: 5px; /* Optional: Add border-radius for rounded corners */
         }
+      
+          #cancelButton {
+        background-color: #555;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #cancelButton:hover {
+        background-color: #777;
+    }
+      
     </style>
 </head>
 
 <body>
 
     <header>
-        <!-- Removed heading -->
+        
     </header>
 
+  
     <div id="welcome-message">
         Welcome Oliver!
+      <button onclick="alert('You are a listener. Go back to change your profile!')">Change Profile</button>
+    </div>
     </div>
   
   <div id="playlist-title-container">
@@ -279,21 +314,30 @@
         </div>
     </div>
 
-    <div id="song-panel">
+<div id="song-panel">
         <div id="song-info">
-            <img id="song-image" src="https://images.unsplash.com/photo-1693856758403-bba589db78dc?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTYxMDg4MTd8&ixlib=rb-4.0.3&q=85">
+            <img id="song-image"
+                src="https://images.unsplash.com/photo-1693856758403-bba589db78dc?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTYxMDg4MTd8&ixlib=rb-4.0.3&q=85">
             <div id="song-title">Song Title</div>
         </div>
         <div id="player-controls">
-            <button class="control-button2"><svg viewBox="0 0 256 512" width="10" title="angle-left">
-  <path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
-</svg></button>
-            <button class="control-button2"><svg viewBox="0 0 448 512" width="15" title="pause">
-  <path d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" />
-</svg></button>
-            <button class="control-button2"><svg viewBox="0 0 256 512" width="10" title="angle-right">
-  <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
-</svg></button>
+            <button class="control-button2" id="prevButton">
+                <svg viewBox="0 0 256 512" width="10" title="angle-left">
+                    <path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
+                </svg>
+            </button>
+            <button class="control-button2">
+                <svg viewBox="0 0 448 512" width="15" title="pause">
+                    <path
+                        d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" />
+                </svg>
+            </button>
+            <button class="control-button2" id="nextButton">
+                <svg viewBox="0 0 256 512" width="10" title="angle-right">
+                    <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                </svg>
+            </button>
         </div>
     </div>
 
