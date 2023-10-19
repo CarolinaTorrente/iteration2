@@ -41,7 +41,7 @@
         .song-title {
             font-family: 'Noto Sans', sans-serif;
             font-size: 2.5em;
-            margin-bottom: 350px;
+            margin-bottom: 200px;
             margin-right: 450px;
         }
 
@@ -54,8 +54,8 @@
         }
 
         .time-bar .time {
-           margin-right: 60px;
-           margin-left: 25px;
+           margin-right: 150px;
+           margin-left: 130px;
             color: #fff;
             background-color: #1db99f; 
             padding: 8px 15px; 
@@ -91,6 +91,10 @@
         .control-button2 svg path {
             fill: #fff;
         }
+      
+   
+
+      
     </style>
 </head>
 
@@ -101,24 +105,30 @@
     <div class="song-container">
         <div class="song-title">Song Title</div>
 
+     
         <div class="time-bar">
             <div class="time">1:15</div>
             <div class="time">3:30</div>
         </div>
 
         <div id="player-controls">
-            <button class="control-button2"><svg viewBox="0 0 256 512" width="30" title="angle-left">
-                    <path
-                        d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
-                </svg></button>
-            <button class="control-button2"><svg viewBox="0 0 448 512" width="45" title="pause">
+            <button class="control-button2" id="prevButton">
+                <svg viewBox="0 0 256 512" width="30" title="angle-left">
+                    <path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
+                </svg>
+            </button>
+            <button class="control-button2">
+                <svg viewBox="0 0 448 512" width="45" title="pause">
                     <path
                         d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" />
-                </svg></button>
-            <button class="control-button2"><svg viewBox="0 0 256 512" width="30" title="angle-right">
+                </svg>
+            </button>
+            <button class="control-button2" id="nextButton">
+                <svg viewBox="0 0 256 512" width="30" title="angle-right">
                     <path
                         d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
-                </svg></button>
+                </svg>
+            </button>
         </div>
         <div class="progress-bar">
             <div class="progress"></div>
